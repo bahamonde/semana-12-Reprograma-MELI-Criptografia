@@ -1,7 +1,6 @@
 const jwt = require ('jsonwebtoken');
 const authConfig = require ('../config/auth');
 const alunas = require ('../model/alunas.json');
-// const bcrypt = require ("bcrypt")
 
 exports.getToken = (req, res) => {
     const { name } = req.body;
