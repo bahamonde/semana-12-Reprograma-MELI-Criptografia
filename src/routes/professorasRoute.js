@@ -4,9 +4,10 @@ const controller = require("../controllers/professorasController")
 const authMiddleware = require ("../middlewares/auth")
 
 
-router.use(authMiddleware)
+//por conta da criptografia, tem que ficar nessas posicoes (get e post geral "fora" do "escopo" da autenticacao)
 router.get("/", controller.get)
-router.get("/:id", controller.getById)
 router.post("/", controller.post)
+router.use(authMiddleware)
+router.get("/:id", controller.getById)
 
 module.exports = router
